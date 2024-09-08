@@ -13,26 +13,31 @@ ol ul {
 
 # Detailed Project Plan - R Package for Pearson Diagram
 
-## 1.1 Objective: 
+## 1.1 Objective: <!-- Do not use semicolon in section titles -->
 The project's goal is to produce a R tool that plots data points from unknown distributions on a Pearson distributional diagram. This package allows users to analyze and visualize samples by plotting them against Skewness and Kurtosis.
 
 #### 1.2 Target Audience: 
 The program is designed for statisticians, data scientists, and academics who have to understand and analyze complex data distributions.
 
-## 2.1 Pearson Diagram: Backround and Components
+## 2.1 Pearson Diagram: Backround <!-- Typo --> and Components <!-- Typo -->
 
-*Skewness ($\beta 1$)* refers to the asymmetry of a probability distribution. If the skewness is positive, the distribution has a long right tail; if it is negative, the tail is to the left.
-$$Skewness = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^3}{(n-1) \cdot S^3}$$
+*Skewness ($\beta 1$)* refers to the asymmetry of a probability distribution. If the skewness is positive, the distribution has a long right tail; if it is negative, the tail is to the left. 
+<!-- beta 1 or beta_1? -->
+$$Skewness = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^3}{(n-1) \cdot S^3}$$ 
+<!-- usually, we denote the sample variance as s^2. Improve punctuation after displayed equations -->
 where, 
 $$S = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}}$$ 
 and 
 $$\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}$$
    
    - ($\beta 1$)>0  - Distribution is right skewed
+   <!-- why is beta-->
    - ($\beta 1$)<0  - Distribution is left skewed
    - ($\beta 1$)=0  - Symmetric distribution
+   <!-- why is beta in parenthesis? Use a consistent notation -->
 
 *Kurtosis ($\beta 2$)* measures the "tailedness" or sharpness of the distribution's peak. A kurtosis of 3 is characteristic of a normal distribution; values more than 3 suggest heavier tails and values less than 3 indicate lighter tails.
+<!-- kurtosis is a word, not the product of k, u, r etc. Type it in text mode, or use standard notation -->
 $$Kurtosis = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^4}{(n-1) \cdot S^4}$$
   
   - ($\beta 2$)>3  - Distribution has sharper peak than normal distribution
@@ -40,17 +45,21 @@ $$Kurtosis = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^4}{(n-1) \cdot S^4}$$
   - ($\beta 2$)=3  - Symmetric distribution
 
 #### 2.2 Pearson Family of Distributions
-The Pearson family has a variety of probability distributions that can be shown on the Pearson diagram which are grouped according to their skewness and kurtosis values.
+The Pearson family has a variety of probability distributions that can be shown on the Pearson diagram which are grouped according to their skewness and kurtosis values.
 
 The Pearson system classifies distributions into seven different families, each of which is determined by the differential equation that regulates their shape. The approach helps in classifying real-world data distributions based on their moments (mean, variance, skewness, and kurtosis).
+<!-- Does the Pearson plot show the mean and the variance? -->
 
 #### 2.3 Plotting using the Pearson Diagram
 
-The Pearson diagram represents skewness on the x-axis and kurtosis on the y-axis. Points matching to various distributions can be plotted using the determined skewness and kurtosis.
+The Pearson diagram represents skewness on the x-axis and kurtosis on the y-axis. 
+<!-- Use a consistent notation; x and y should be in math mode -->
+Points matching to various distributions can be plotted using the determined skewness and kurtosis.
 
 The origin corresponds to the Normal Distribution (skewness = 0, kurtosis = 3). Gamma and exponential distributions are shown to the right of the origin (with positive skewness and high kurtosis). Depending on the parameters, beta distributions can have either positive or negative skewness and varied kurtosis. This visualization makes it easy to classify data distributions and compare unknown data samples to known distributions.
 
-In the X axis of the diagram is skewness(($\beta 1$)) and Y axis is Kurtosis(($\beta 2$)). 
+In the X axis of the diagram is skewness(($\beta 1$)) and Y axis is Kurtosis(($\beta 2$)).
+<!-- Parentheses must be preceded by a space -->
 	
 Various regions in the diagram correspond to different types of distributions, such as normal, exponential, uniform, and others. Based on the characteristics of each distribution it will be displayed in the diagram as dot, line, or area. Each representations were listed below with example distributions.
 
@@ -64,6 +73,7 @@ Various regions in the diagram correspond to different types of distributions, s
 Below are the functions intended to be developed as the completion of the project.
 
 * **Core Functions:**
+<!-- Use a different typography for functions, e.g., texttt   -->
   
   1. **calculate_skewness_kurtosis(data):** Calculates and returns the skewness and kurtosis of the input data.
     + **Input:** A univariate or multivariate numerical data, where each observation represents a value from the dataset. Data should be validated for missing values and outliers before calculation.
@@ -103,6 +113,8 @@ Below are the functions intended to be developed as the completion of the projec
     + **Output:** A named list containing two numeric values representing skewness and kurtosis.
   
 #### 3.2 Integration with Existing Packages
+<!-- Who will "make sure"? -->
+
 Make sure the package checks for the presence of required packages and installs them if necessary.
 
 * **Required Packages:**
@@ -214,3 +226,5 @@ Below are the planned deliverables till the completion of the Pearson Diagram R-
   iii. Initial Implementation of the package - TBC
   iv. Peer Testing - TBC
   v. Package and Report Submission - TBC 
+
+<!-- Cite relevant bibliography -->
